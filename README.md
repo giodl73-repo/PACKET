@@ -2,14 +2,28 @@
 
 **Internet 2.0 — multi-scale connectivity infrastructure analysis and conceptual design.**
 
-PACKET scores connectivity networks at international, national, regional, or
-local scale, classifies service tiers, and finds evidence-backed gaps in
-coverage, capacity, latency, availability, affordability, competition, and
-path diversity.
+**Coverage is not connectivity.**
+
+An address can be marked served and still be unaffordable, fragile, slow, or
+one cut away from isolation. PACKET scores networks at international, national,
+regional, or local scale across coverage, capacity, latency, availability,
+affordability, competition, and path diversity.
+
+**Series:** [Applied Systems](https://github.com/giodl73-repo/giodl73-repo/blob/main/series/applied-systems.md)
 
 > PACKET is a research and conceptual-design project. It is not an engineering
 > plan, RF or optical design, regulatory filing, network build plan, or advocacy
 > brief, and it claims no FCC, NTIA, carrier, or standards-body endorsement.
+
+## Why this matters
+
+Broadband programs can count passings while missing price, reliability,
+middle-mile, competition, and route diversity. PACKET makes those promises
+explicit and evaluates them at the scale where the decision is actually being
+made.
+
+The transferable principle is: **availability is a bundle of service promises,
+not a binary coverage flag.**
 
 ## What is implemented
 
@@ -22,14 +36,20 @@ path diversity.
 | `packet-gap` | Scale-filtered gap analysis and null-result reporting. |
 | `packet-cli` | CLI front door for corpus, score, tier-SLA, and gap commands. |
 
-The first cited broadband-divide run reports both tested dimensions with 50%
-of observations below the declared bar. That result is scoped to the cited run,
-not a universal claim about every network or market.
+## Evidence
+
+The first cited
+[broadband adoption divide analysis](docs/findings/2026-06-broadband-adoption-divide.md)
+reports both tested dimensions with 50% of observations below the declared bar.
+
+That result is scoped to the cited run, not a universal claim about every
+network or market.
 
 ## Quick start
 
 ```powershell
-cargo run -p packet-cli -- --help
+cargo run -p packet-cli -- corpus corpus/us-ca.md
+cargo run -p packet-cli -- gap --scale regional --corpus corpus
 cargo test --workspace
 ```
 
