@@ -1,0 +1,10 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/packet-network",
+    "crates/packet-corpus",
+    "crates/packet-score",
+    "crates/packet-tier",
+    "crates/packet-gap",
+    "crates/packet-cli",
+]

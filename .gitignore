@@ -1,0 +1,18 @@
+# Build artifacts
+/target
+**/*.rs.bk
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+
+# Local data (no raw datasets committed)
+/data/raw/
+/data/cache/
+
+# PROOF cache
+/.proof/
+
+# Dogfood build scaffolding (not product)
+/.craft/

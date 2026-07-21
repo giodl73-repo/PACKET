@@ -1,0 +1,12 @@
+[package]
+name = "packet-gap"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+thiserror = "1"
+packet-network = { path = "../packet-network" }
+packet-corpus = { path = "../packet-corpus" }
+packet-score = { path = "../packet-score" }
+packet-tier = { path = "../packet-tier" }

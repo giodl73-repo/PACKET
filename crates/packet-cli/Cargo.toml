@@ -1,0 +1,13 @@
+[package]
+name = "packet-cli"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+clap = { version = "4", features = ["derive"] }
+serde = { version = "1", features = ["derive"] }
+packet-network = { path = "../packet-network" }
+packet-corpus = { path = "../packet-corpus" }
+packet-score = { path = "../packet-score" }
+packet-tier = { path = "../packet-tier" }
+packet-gap = { path = "../packet-gap" }
