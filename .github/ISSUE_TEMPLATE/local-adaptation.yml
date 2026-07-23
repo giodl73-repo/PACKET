@@ -1,0 +1,37 @@
+name: Local adaptation proposal
+description: Propose using PACKET for a bounded connectivity region, market, middle-mile, or resilience question.
+title: "Local adaptation: "
+labels: ["adoption", "evidence-needed"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this for a bounded PACKET adaptation. Public reuse does not create an engineering, RF, optical, regulatory, build-plan, advocacy, endorsement, funding, or validation claim.
+  - type: input
+    id: scope
+    attributes:
+      label: Bounded scope
+      placeholder: "Example: county middle-mile resilience and affordability review"
+    validations:
+      required: true
+  - type: textarea
+    id: service-question
+    attributes:
+      label: Service question
+      description: What connectivity service promise is being tested?
+    validations:
+      required: true
+  - type: textarea
+    id: source-surfaces
+    attributes:
+      label: Existing source surfaces
+      description: List FCC/NTIA, state, carrier, outage, price, speed, route-diversity, or local sources.
+    validations:
+      required: true
+  - type: textarea
+    id: held-claims
+    attributes:
+      label: Claims that must stay held
+      description: Name regulatory, engineering, build-plan, endorsement, funding, procurement, compliance, or validation claims that should not be made.
+    validations:
+      required: true

@@ -1,0 +1,29 @@
+name: Source or claim correction
+description: Correct a PACKET source interpretation, evidence label, public claim, or service boundary.
+title: "Source/claim correction: "
+labels: ["evidence", "claim-boundary"]
+body:
+  - type: input
+    id: location
+    attributes:
+      label: Location
+      placeholder: "README.md or docs/findings/2026-06-broadband-adoption-divide.md"
+    validations:
+      required: true
+  - type: textarea
+    id: current-claim
+    attributes:
+      label: Current claim or issue
+    validations:
+      required: true
+  - type: textarea
+    id: correction
+    attributes:
+      label: Proposed correction
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Supporting evidence
+      description: Add source links, repo paths, or reviewer rationale. If evidence is missing, say source-needed.

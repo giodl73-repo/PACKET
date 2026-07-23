@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: PACKET open adoption guide
+    url: https://github.com/giodl73-repo/PACKET/blob/master/docs/adoption/README.md
+    about: Start here before proposing a connectivity local adaptation or public reuse.
+  - name: PACKET cited finding
+    url: https://github.com/giodl73-repo/PACKET/blob/master/docs/findings/2026-06-broadband-adoption-divide.md
+    about: Inspect the current broadband adoption-divide evidence boundary.
