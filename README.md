@@ -11,6 +11,16 @@ affordability, competition, and path diversity.
 
 **Series:** [Applied Systems](https://github.com/giodl73-repo/giodl73-repo/blob/main/series/applied-systems.md)
 
+## Show someone (start here)
+
+| Audience | Path | Time |
+|---|---|---|
+| **Planner / researcher** | [SHOWCASE.md](SHOWCASE.md) → [broadband adoption divide](docs/findings/2026-06-broadband-adoption-divide.md) | 15–25 min |
+| **CLI implementer** | [SHOWCASE.md](SHOWCASE.md) → `cargo run -p packet-cli -- gap --scale regional --corpus corpus` | 10–20 min |
+
+Research lab only — not RF design, regulatory filing, carrier build plan, or
+FCC/NTIA endorsement. Coverage is not connectivity.
+
 ## Infrastructure 2.0 family
 
 PACKET is one domain implementation of a shared evidence-first method:
