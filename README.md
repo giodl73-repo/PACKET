@@ -53,6 +53,19 @@ PACKET is public and open to use as a reference model, cited connectivity
 finding, diagnostic pattern, review discipline, or local adaptation starting
 point.
 
+### Reuse boundary
+
+PACKET is currently a specialist connectivity-infrastructure analysis product,
+not a supported cross-repository library. Its network model, evidence taxonomy,
+DIM-01..13 scoring, service tiers, gap policy, and CLI remain product-local; no
+portfolio repository pins a `packet-*` crate or owns compatibility proof.
+
+Infrastructure 2.0 siblings share and adapt an evidence-first method, not a
+versioned PACKET dependency. Family source similarities, findings, worksheets,
+and local adaptations are not stable provider contracts. Direct reuse requires
+a named downstream consumer, a bounded versioned surface, and consumer-owned
+compatibility tests.
+
 If you want to apply it to a region, broadband market, middle-mile question,
 resilience problem, affordability gap, or connectivity service question, start
 with [`docs/adoption/README.md`](docs/adoption/README.md). It lays out safe
