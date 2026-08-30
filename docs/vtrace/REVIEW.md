@@ -13,9 +13,12 @@ Date: 2026-06-26
 Reviewer / lenses: PACKET `.roles` parliament + editorial panel (simulated against
 committed role files), requirements-traceability and V&V lenses.
 
-This gate decides whether PACKET's **planning baseline** is coherent enough to proceed
-to implementation planning. It does **not** claim any implementation, scored corpus, or
-validated result.
+This gate decided whether PACKET's **planning baseline** was coherent enough to
+proceed to implementation planning. Since that gate, PACKET has added the Rust
+workspace, seed corpus, CLI, and first bounded broadband adoption finding. This
+document remains the foundation review record; current implementation evidence is
+tracked in `VERIFICATION.md`, `PRODUCT_PLAN.md`, and
+`docs/findings/2026-06-broadband-adoption-divide.md`.
 
 ## Role Review Matrix
 
@@ -24,8 +27,8 @@ validated result.
 | Systems engineering | yes | Network Planner + Scope Keeper | pass | MISSION→CONOPS→REQUIREMENTS→SPEC→TRACE form a coherent chain; tier + scale models integrated. |
 | Requirements traceability | yes | Traceability lens | pass | `TRACE.md` maps NEED-001..008 / OPS-001..007 → REQ-001..016 → SPEC-001..013; gaps labelled. |
 | V&V | yes | V&V lens | pass_with_risk | `VERIFICATION.md` methods credible; most results `pending` (greenfield). |
-| Software assurance | no | — | not_required | No code yet; revisit at implementation planning. |
-| Security/privacy | no | — | not_required | No data ingestion/code yet; revisit when sources/CLI exist. |
+| Software assurance | yes | Software-assurance lens | pass | Current Rust workspace passes fmt, clippy, and workspace tests; see `VERIFICATION.md`. |
+| Security/privacy | yes | Citation Auditor + Scope Keeper | pass_with_risk | Current corpus uses public aggregate/source pointers and labelled estimates; no personal or network-sensitive records are ingested. |
 | Safety/mission impact | yes | Reliability Officer + Incumbent-ISP Realist | pass | Measurement basis (SPEC-MB-01) and tier-SLA gating (REQ-015) control overclaim of performance; right-of-way/overbuild assumptions must be explicit. |
 | Source custody | yes | Citation Auditor + data steward | pass_with_risk | Citation + scale discipline specified (SPEC-009/013); coverage-map overstatement flagged (SPEC-UNK-002); no corpus sources ingested yet. |
 | Configuration/change control | yes | Scope Keeper | pass | Public contracts IF-001..004 have change-control triggers; VTRACE one-at-a-time enforced. |
@@ -57,7 +60,7 @@ No open critical or major findings.
 | Risk | Rationale | Owner | Revisit Trigger |
 |---|---|---|---|
 | Dimension weights, per-tier SLA thresholds, and scale nesting are provisional. | Calibrate from the corpus (REQ-006) and resolve DEF-005; asserting now would be unfounded. | PACKET maintainer | First corpus-calibration wave |
-| Most verification results are `pending`. | No implementation exists yet by design. | PACKET maintainer | First implementation work package |
+| Historical verification rows can lag implementation. | Implementation now exists; current evidence must be read from the implementation update in `VERIFICATION.md`. | PACKET maintainer | Future VTRACE pulse or release review |
 | Coverage-map overstatement vs measured data. | Recorded as SPEC-UNK-002; proxy/source-needed labels mitigate. | data steward | `data/sources.md` build |
 
 ## Required Follow-Up
@@ -74,6 +77,11 @@ No open critical or major findings.
 ```powershell
 proof check .
 git diff --check
+cargo fmt --all -- --check
+cargo clippy --workspace --all-targets -- -D warnings
+cargo test --workspace --locked
+cargo run -p packet-cli -- --help
+cargo run -p packet-cli -- gap --scale regional --corpus corpus
 ```
 
 ## Result
