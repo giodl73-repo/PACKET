@@ -92,3 +92,15 @@ signal is the complement that catches it.
   measures whether 100/20 service is available. They are kept as distinct
   dimensions and must not be conflated.
 - Sources: `data/sources.md`.
+
+## Public release boundary
+
+This finding is a cited research result and local adaptation starting point, not
+a network build plan, RF or optical design, regulatory determination, funding
+instruction, carrier commitment, FCC/NTIA endorsement, standards-body
+endorsement, advocacy brief, or complete national connectivity finding.
+It is not a network build plan.
+
+`PACKET-PF-05` requires the release evidence in
+[`public-finding-release-boundary.md`](public-finding-release-boundary.md)
+before this finding is reused as public authority beyond its cited regional run.

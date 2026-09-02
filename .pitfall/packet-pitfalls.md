@@ -91,7 +91,7 @@ without rewriting the historical foundation record.
 
 ## PACKET-PF-05: First Public Finding Becomes Build Or Regulatory Authority
 
-**Status:** OPEN
+**Status:** MITIGATED
 
 **Pattern:** The cited broadband adoption divide, CLI gap output, or
 local-adaptation material is treated as a build plan, RF/optical design,
@@ -108,8 +108,13 @@ beyond its labels.
 **Structural solution:** Keep research-lab and no-authority language visible,
 preserve DIM-02 estimated posture and unassessed dimensions, and require
 explicit full-panel release review before treating the finding as a public
-decision artifact.
+decision artifact. PACKET now has a public finding release boundary and policy
+check that block broader authority until command, scale, market set, dimensions,
+source labels, allowed/blocked claims, full parliament review, editorial review,
+and downstream owner acceptance are named.
 
 **Evidence:** `README.md`, `SHOWCASE.md`,
 `docs/findings/2026-06-broadband-adoption-divide.md`,
-`docs/vtrace/REVIEW.md`, and `.roles/ROLE.md`.
+`docs/findings/public-finding-release-boundary.md`,
+`docs/vtrace/VERIFICATION.md`, `docs/vtrace/REVIEW.md`, `.roles/ROLE.md`, and
+`tests/check-public-finding-boundary.ps1`.

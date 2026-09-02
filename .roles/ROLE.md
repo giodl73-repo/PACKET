@@ -60,6 +60,14 @@ parliament and editorial.
 
 ---
 
+## PITFALL gates
+
+| Gate | Roles | Blocks |
+|---|---|---|
+| `PACKET-PF-05` public finding release | Network / Broadband Planner; Network Engineer; Reliability & Operations Engineer; Telecom Economist; Digital-Equity Advocate; Resilience & Security Engineer; Incumbent-ISP & Right-of-Way Realist; Citation Auditor; Scope Keeper; Numeracy Checker | Treating a cited finding as build, regulatory, funding, procurement, advocacy, carrier, FCC/NTIA, standards-body, or complete national connectivity authority unless command, scale, market set, dimensions, source labels, allowed/blocked claims, full parliament review, editorial review, and downstream owner acceptance are visible. |
+
+---
+
 ## How reviews are recorded
 
 When a `docs/vtrace/` deliverable, corpus entry, gap finding, design proposal, or

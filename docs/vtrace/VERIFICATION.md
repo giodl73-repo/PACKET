@@ -55,7 +55,7 @@ cargo run -p packet-cli -- gap --scale regional --corpus corpus
 |---|---|---|---|
 | L0 | Fast doc/sanity for the active VTRACE stage. | `proof check .`, `git diff --check` | passed |
 | L1 | Full repo confidence before push. | L0 + `cargo fmt --all -- --check`, `cargo clippy --workspace --all-targets -- -D warnings`, `cargo test --workspace --locked` | passed |
-| L2 | Readiness proof before a public claim. | corpus regeneration + tier/SLA checks + scale-filtered gap + role review | pass_with_risk (pipeline exists; first gap claim still needs explicit full-panel release review) |
+| L2 | Readiness proof before a public claim. | corpus regeneration + tier/SLA checks + scale-filtered gap + role review + public finding release boundary | pass_with_risk (pipeline exists; `PACKET-PF-05` now requires explicit full-panel release review before broader public-authority reuse) |
 
 ## Evidence Ledger
 
@@ -70,13 +70,14 @@ cargo run -p packet-cli -- gap --scale regional --corpus corpus
 | EVID-003 | inspection | `data/sources.md`, `corpus/us-*.md`, finding limits | REQ-003 | pass_with_risk |
 | EVID-004..008, 014..016 | commands/tests | workspace tests plus focused package tests | REQ-004..008/014/015/016 | passed |
 | EVID-CR-001..003 | commands | `cargo fmt --all -- --check`; `cargo clippy --workspace --all-targets -- -D warnings`; `cargo test --workspace --locked` | code rigor | passed |
+| EVID-PF-05 | policy check | `pwsh -NoProfile -File tests\check-public-finding-boundary.ps1` plus `docs/findings/public-finding-release-boundary.md` | REQ-009/010/011 / `PACKET-PF-05` | passed |
 
 ## Gaps
 
 | Gap | Impact | Disposition |
 |---|---|---|
 | Historical VTRACE rows lag current implementation state. | Planning docs can understate the current Rust/corpus/CLI/finding evidence. | mitigated by this implementation update; keep future pulses current |
-| Review gate not yet exercised on a real public corpus claim. | REQ-009/010/011 are process-verified and the finding is bounded, but full release review should be recorded for public reuse. | accept risk until first explicit release review |
+| Review gate not yet exercised on a real public corpus claim. | REQ-009/010/011 are process-verified and the finding is bounded, but full release review should be recorded for public reuse. | mitigated by public finding release boundary; broader authority remains blocked until first explicit full-panel release review |
 | DIM-02 availability is estimated, not per-state cited. | Availability finding is useful order-of-magnitude context but not a precise state claim. | keep label and source-limit wording visible |
 
 ## Role Review Notes

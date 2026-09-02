@@ -80,7 +80,7 @@ tests cover conforming and shortfall cases.
 
 ## PACKET-I-05: Public Reuse Requires Review Boundary Language
 
-**Status:** PARTIAL
+**Status:** VERIFIED
 
 **Claim:** PACKET can be used as a reference model or local adaptation starting
 point, but any public or downstream claim needs scope, citation, numeracy, and
@@ -94,3 +94,27 @@ review gate, and no-authority language keep public reuse bounded.
 
 **Evidence:** `README.md`, `docs/adoption/README.md`, `.roles/ROLE.md`,
 `docs/vtrace/REVIEW.md`, and `PRODUCT_PLAN.md`.
+
+## PACKET-I-06: Public Findings Require Release Evidence
+
+**Status:** VERIFIED
+
+**Claim:** A PACKET finding cannot become public build, regulatory, funding,
+procurement, advocacy, carrier, FCC/NTIA, standards-body, or complete national
+connectivity authority unless the release record names command, scale, market
+set, assessed and unassessed dimensions, source labels, exact allowed and
+blocked claims, full parliament review, editorial review, and downstream owner
+acceptance.
+
+**Why it matters:** A reproducible finding can be useful and still be overread
+as an engineering plan or public authority once it leaves the repo-local
+research context.
+
+**Enforcement:** `PACKET-PF-05` is guarded by the public finding release
+boundary, README/adoption/finding/VTRACE wording, role gate, and policy check.
+
+**Evidence:** `docs/findings/public-finding-release-boundary.md`, `README.md`,
+`docs/adoption/README.md`,
+`docs/findings/2026-06-broadband-adoption-divide.md`,
+`docs/vtrace/VERIFICATION.md`, `.roles/ROLE.md`, and
+`tests/check-public-finding-boundary.ps1`.

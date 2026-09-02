@@ -25,6 +25,15 @@ Public use does not create an engineering plan, RF or optical design,
 regulatory filing, network build plan, advocacy brief, FCC endorsement, NTIA
 endorsement, carrier endorsement, or standards-body endorsement.
 
+Public reuse of the first cited finding must pass the
+[public finding release boundary](../findings/public-finding-release-boundary.md):
+the release record must name command, scale, market set, assessed and unassessed
+dimensions, source labels, exact allowed and blocked claims, full parliament
+review, editorial review, and downstream owner acceptance.
+
+Full parliament review and editorial review are required before a cited PACKET
+finding is used as public authority rather than a bounded research result.
+
 ## Fast Paths
 
 | If You Are | Start With | What You Can Do |

@@ -21,6 +21,13 @@ affordability, competition, and path diversity.
 Research lab only — not RF design, regulatory filing, carrier build plan, or
 FCC/NTIA endorsement. Coverage is not connectivity.
 
+The [public finding release boundary](docs/findings/public-finding-release-boundary.md)
+keeps `PACKET-PF-05` visible: a cited finding is not public build, regulatory,
+funding, procurement, advocacy, carrier, FCC/NTIA, or standards-body authority
+unless its release record names command, scale, market set, dimensions, source
+labels, full parliament review, editorial review, and downstream owner
+acceptance.
+
 ## Infrastructure 2.0 family
 
 PACKET is one domain implementation of a shared evidence-first method:
