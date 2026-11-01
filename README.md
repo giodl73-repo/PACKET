@@ -13,6 +13,20 @@ affordability, competition, and path diversity.
 
 ## Show someone (start here)
 
+Open the [Rust/WASM local corpus workbench](https://giodl73-repo.github.io/PACKET/)
+to import your Markdown records or a JSON bundle, choose one scale, inspect
+admission and dimension coverage, and explore provisional mean/tail signals.
+Download original input, current request, native/workbench reports, source and
+WASM. Seven authored synthetic examples show tail, mean, null, missing-score,
+source-hold, scale-isolation and capacity-screen behavior. Inputs stay in the tab.
+
+This is a first-party research tool, not a public finding release. Missing
+scores remain unassessed in its complete-dimension summary even though native
+gap JSON uses zero defaults. The capacity screen does not establish a complete
+SLA; source labels are caller assertions. No corpus/finding/calibration or public
+authority status is promoted. See [BUILD.md](BUILD.md) and
+[accepted WP-WEB-001](docs/vtrace/BROWSER_WORK_PACKAGE.md) for scope and evidence.
+
 | Audience | Path | Time |
 |---|---|---|
 | **Planner / researcher** | [SHOWCASE.md](SHOWCASE.md) → [broadband adoption divide](docs/findings/2026-06-broadband-adoption-divide.md) | 15–25 min |

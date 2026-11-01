@@ -1,0 +1,22 @@
+[package]
+name = "packet-web"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+publish = false
+[workspace]
+[lib]
+crate-type = ["cdylib", "rlib"]
+[[bin]]
+name = "packet-inspect"
+path = "src/main.rs"
+[features]
+wasm = ["dep:wasm-bindgen"]
+[dependencies]
+packet-corpus = { path = "../../crates/packet-corpus" }
+packet-score = { path = "../../crates/packet-score" }
+packet-tier = { path = "../../crates/packet-tier" }
+packet-gap = { path = "../../crates/packet-gap" }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+wasm-bindgen = { version = "=0.2.127", optional = true }

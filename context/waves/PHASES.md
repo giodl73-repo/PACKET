@@ -8,6 +8,7 @@ Work is organized into small waves and pulses.
 |---|---|---|
 | `2026-06-26-vtrace-foundation` | complete | VTRACE left-side baseline, 12 stages (MISSION → WORK_PACKAGES), pulses 01–12. |
 | `2026-06-26-packet-implementation` | planned | Build WP-001..006 bottom-up, one work package per pulse (pulses 01–06). No code until executed. |
+| `2026-11-01-browser-workbench` | active | Accepted WP-WEB-001 first-party corpus/gap consumer; qualification and release custody. |
 
 ## Active wave
 
