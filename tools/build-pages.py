@@ -91,6 +91,7 @@ def main():
  altered('duplicate-field',lambda b:replace(b,'id: synthetic-0','id: synthetic-0\nid: shadow'))
  altered('duplicate-id',lambda b:replace(b,'id: synthetic-0','id: synthetic-1'))
  altered('unit-substring',lambda b:replace(b,'| Mbps |','| not-Mbps |'))
+ altered('byte-unit-unassessed',lambda b:replace(b,'| Mbps |','| MBps |'))
  altered('over-markdown',lambda b:b['documents'][0].update(markdown='x'*32769))
  altered('over-lines',lambda b:b['documents'][0].update(markdown='\n'*4097))
  altered('over-documents',lambda b:b.update(documents=b['documents']*9))

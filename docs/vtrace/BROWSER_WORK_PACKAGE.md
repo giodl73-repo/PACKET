@@ -48,7 +48,7 @@ null result means no modeled flags, not a well-served market or complete SLA.
 Rubric weights are provenance; the core gap routine does not apply them.
 
 Call tier_sla_gap only when the first native Mbps-matching quantity has exact
-unit Mbps, is finite and non-negative, and tier is explicit T1..T4; otherwise
+case-sensitive unit Mbps, is finite and non-negative, and tier is explicit T1..T4; otherwise
 capacity is unassessed. This is only a provisional capacity screen. Latency,
 availability, affordability, peak/average load and topology/diverse-path
 conformance remain unassessed. Do not call conformance with an invented graph.

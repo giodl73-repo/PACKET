@@ -59,7 +59,7 @@ applying them. Mean and tail signals stay separate, at exactly one requested
 scale, with the selected IDs and market set named. No cross-scale aggregation.
 
 Capacity screening calls tier_sla_gap only when the first native Mbps-matching
-quantity has exact unit Mbps (case insensitive) and non-negative finite value,
+quantity has exact case-sensitive unit Mbps and non-negative finite value,
 and tier is explicit. Other SLA terms, load basis and topology are unassessed;
 no invented network is passed to conformance. Neither a native null result nor
 a clear screen proves adequate connectivity or a complete SLA.

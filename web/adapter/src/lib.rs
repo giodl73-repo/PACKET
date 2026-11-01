@@ -159,7 +159,7 @@ fn capacity(entry: &CorpusEntry) -> bool {
         .quantities
         .iter()
         .find(|q| q.unit.to_ascii_lowercase().contains("mbps"))
-        .is_some_and(|q| q.unit.eq_ignore_ascii_case("mbps") && q.value >= 0.0)
+        .is_some_and(|q| q.unit == "Mbps" && q.value >= 0.0)
 }
 // CR-001: one bounded report assembly keeps native output and its coverage
 // context inseparable; parsing/admission and capacity policy are separate helpers.
@@ -467,6 +467,14 @@ mod tests {
                 .as_str()
                 .unwrap()
                 .replace("| Mbps |", "| not-Mbps |"),
+        });
+        assert!(!capacity(&row.entry.unwrap()));
+        let row = record(Document {
+            name: "bytes.md".into(),
+            markdown: corpus["documents"][0]["markdown"]
+                .as_str()
+                .unwrap()
+                .replace("| Mbps |", "| MBps |"),
         });
         assert!(!capacity(&row.entry.unwrap()));
     }
