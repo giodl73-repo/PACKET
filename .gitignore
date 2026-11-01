@@ -1,6 +1,11 @@
 # Build artifacts
 **/target/
 **/*.rs.bk
+/dist/
+/.cache/
+/node_modules/
+/test-results/
+/playwright-report/
 
 # OS / editor
 .DS_Store

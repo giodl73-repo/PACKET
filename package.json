@@ -1,0 +1,1 @@
+{"name":"packet-corpus-workbench","version":"0.1.0","private":true,"type":"module","scripts":{"test:pages":"playwright test"},"devDependencies":{"@playwright/test":"1.61.1"}}

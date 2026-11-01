@@ -5,10 +5,13 @@
 Repo: PACKET
 
 VTRACE adoption scope: connect PACKET's accepted requirements to mission needs, CONOPS
-scenarios, controlled specification items, future design surfaces, work packages,
-verification, validation, and evidence. PACKET is greenfield: design elements, work
-packages, and evidence are **planned/deferred**, and this matrix exposes those gaps
-honestly rather than implying built surfaces exist.
+scenarios, controlled specification items, implementation surfaces, work packages,
+verification, validation, and evidence.
+
+Current implementation update: the Rust workspace, corpus, CLI, and first cited
+broadband adoption finding now exist. Historical planning rows that originally
+said greenfield/pending should be read with this update and the current evidence
+in `VERIFICATION.md`.
 
 ## Requirement Trace
 
@@ -59,13 +62,16 @@ honestly rather than implying built surfaces exist.
 
 ## Honest Gaps (no faked evidence)
 
-- No `VER-*` evidence exists yet; verification methods are named but unrun. The next
-  stage (`VERIFICATION.md`) defines `VER-*`; actual `EVID-*` accrue only once
-  implementation work packages run.
-- No `WP-*`, `ARCHITECTURE`, `INTERFACES`, or `CODE_RIGOR` artifacts exist yet; the
-  trace marks these `deferred`, not satisfied.
-- Dimension weights, SLA thresholds, and scale nesting are provisional; the trace does
-  not claim calibrated values.
+- Implementation evidence now exists for corpus parsing, scale filtering,
+  scoring, tier/SLA checks, tail-gap detection, CLI help, and the regional
+  broadband adoption finding. See `VERIFICATION.md` and
+  `docs/findings/2026-06-broadband-adoption-divide.md`.
+- Some row-level planning language remains historical; current status is
+  recorded by the implementation update rather than by rewriting the foundation
+  trace as if it had been authored after code existed.
+- Dimension weights, SLA thresholds, DIM-02 state availability estimates, and
+  scale nesting remain provisional; the trace does not claim calibrated values
+  or regulatory authority.
 
 ## Role Review Notes
 

@@ -24,6 +24,13 @@ subcommands. The CLI's product surface is corpus/score/tier/gap only.
 
 ## Work Package Details
 
+The accepted first-party browser consumer is specified separately in
+[`BROWSER_WORK_PACKAGE.md`](BROWSER_WORK_PACKAGE.md) as **WP-WEB-001**. Its
+ten-voice producer review reached a fixed point before implementation. It
+consumes existing APIs and preserves research/finding authority boundaries;
+it does not replace the historical WP-001..006 evidence or complete new
+calibration, source verification, full-SLA or public-finding acceptance gates.
+
 ### WP-001: Network graph kernel
 
 Objective: a `packet-network` crate that models the network as a graph of nodes and links

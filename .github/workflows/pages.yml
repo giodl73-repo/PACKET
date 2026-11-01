@@ -1,0 +1,80 @@
+name: Corpus workbench
+on:
+  pull_request:
+  push:
+    branches: [master]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - uses: dtolnay/rust-toolchain@1.95.0
+        with:
+          components: rustfmt, clippy
+          targets: wasm32-unknown-unknown
+      - name: Install pinned bindings and browser
+        timeout-minutes: 5
+        run: |
+          mkdir -p .cache/bindgen
+          curl --fail --location --retry 2 --max-time 60 https://github.com/wasm-bindgen/wasm-bindgen/releases/download/0.2.127/wasm-bindgen-0.2.127-x86_64-unknown-linux-musl.tar.gz -o .cache/bindgen.tar.gz
+          echo '61d4a7dc85acfa0d2354ccc0b8361928c7e52a746d17f28ebaa795ed3dc1614a  .cache/bindgen.tar.gz' | sha256sum --check
+          tar -xzf .cache/bindgen.tar.gz -C .cache/bindgen --strip-components=1
+          echo "$PWD/.cache/bindgen" >> "$GITHUB_PATH"
+          npm ci --fetch-retries=1 --fetch-timeout=60000
+          npx playwright install --with-deps chromium
+      - name: Validate native and portable boundaries
+        run: |
+          cargo fmt --all --check
+          cargo test --locked --workspace
+          pwsh -NoProfile -File tests/check-public-finding-boundary.ps1
+          cargo run --locked -p packet-cli -- --help
+          cargo doc --locked --workspace --no-deps
+          cargo test --locked --manifest-path web/adapter/Cargo.toml --all-features
+          cargo clippy --locked --workspace --all-targets -- -D warnings
+          cargo fmt --manifest-path web/adapter/Cargo.toml --check
+          cargo clippy --locked --manifest-path web/adapter/Cargo.toml --all-features --all-targets -- -D warnings
+          cargo clippy --locked --manifest-path web/adapter/Cargo.toml --lib --features wasm --target wasm32-unknown-unknown -- -D warnings
+      - name: Build clean artifact and test real WASM
+        run: |
+          python -B tools/build-pages.py
+          python -c "import json; assert not json.load(open('dist/PACKET/provenance.json'))['dirty']"
+          npm run test:pages
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: browser-evidence
+          path: |
+            .cache/browser-results.json
+            .cache/site-inventory.json
+            .cache/native-references.json
+            .cache/review
+            test-results
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist/PACKET
+  deploy:
+    if: github.ref == 'refs/heads/master' && github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-24.04
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/deploy-pages@v4
+        id: deployment

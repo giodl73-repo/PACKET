@@ -9,6 +9,14 @@ analytical estimate anchored to a cited source, not a direct figure.
 | `acs-s2801-2023` | U.S. Census Bureau, American Community Survey (ACS) 2023, Table S2801 "Types of Computers and Internet Subscriptions" | Percent of households with a broadband internet subscription, by state | 2026-06 (via public ACS summaries) |
 | `fcc-nbm-2024` | FCC National Broadband Map / Broadband Data Collection, December 2024 update | Percent of US locations served with fixed 100/20 Mbps broadband (~94% nationally) and documented urban/rural coverage gaps | 2026-06 |
 
+## Authored browser fixture
+
+`browser-authored-fixture` identifies synthetic quantities and ratings authored
+in `web/adapter/src/lib.rs` for the local browser workbench. It is not an
+empirical connectivity dataset or support for a real-market claim. Its label is
+`provisional`; values exist only to exercise parsing, scale, mean/tail/null and
+capacity-screen behavior. This fixture does not amend the cited corpus or findings.
+
 ## Notes on rigor
 
 - **Adoption vs. availability are different things.** `acs-s2801-2023` measures

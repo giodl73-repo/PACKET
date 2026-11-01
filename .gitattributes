@@ -1,0 +1,4 @@
+* text=auto eol=lf
+# Preserve the verbatim upstream legal documents, including their whitespace.
+tools/licenses/rust/COPYRIGHT-library.html -text -whitespace
+tools/licenses/rust/licenses/** -text -whitespace
