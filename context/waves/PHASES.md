@@ -11,7 +11,8 @@ Work is organized into small waves and pulses.
 
 ## Active wave
 
-- `2026-06-26-packet-implementation` (all pulses defined; pending execution)
+- `2026-11-01-browser-workbench` (accepted WP-WEB-001; first-party browser consumer)
+- Historical implementation pulse results remain in `2026-06-26-packet-implementation/WAVE.md`.
 
 ## Protocol
 
